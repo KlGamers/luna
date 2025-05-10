@@ -1,0 +1,182 @@
+body { background: #000; }
+
+div{
+  display: block;
+  position: absolute;
+  margin: auto;
+  top:0; bottom:0; left:0; right:0;
+}
+
+.wrapper{
+  height: 400px;
+  width: 600px;
+  margin: auto;
+  font-family: 'Clicker Script', cursive;
+}
+
+.cloud {
+  background: #D0D0D0;
+  width: 90px;
+  height: 42px; 
+  -webkit-animation: clouds 40s infinite;
+  margin-left: 0;
+}
+
+.cloud:before {
+    border-radius: 50%;
+    box-shadow: 20px -20px 0 0 #D0D0D0,
+                90px 0 0 0 #D0D0D0,
+                60px -27px 0 8px #D0D0D0;
+    content: "";
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: -22px;
+    bottom: 0;
+    background: #D0D0D0;
+}
+
+.cloud:nth-child(1){ top: auto; bottom: 120px; opacity: 0.85}
+.cloud:nth-child(2){ right: auto; left: 320px; opacity: 0.5}
+.cloud:nth-child(3){ bottom: auto; top: 120px; right: auto; left: 80px; opacity: 0.75;}
+.cloud:nth-child(4){ bottom: auto; top: 20px; right: auto; left: 320px; opacity: 0.65;}
+
+.moon {
+  height: 120px;
+  width: 120px;
+  background: #f0f0f0e0; 
+  border-radius: 60px;
+  box-shadow: 0 0 60px 10px rgba(255, 255, 255, 0.6); 
+}
+
+
+.moon:before {
+    border-radius: 60px;
+    box-shadow: 10px -50px 0 0 #444,
+                50px 0 0 0 #444,
+                50px -37px 0 10px #444;
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 30px;
+    bottom: 10px;
+    background: #444;
+}
+
+.cat {
+  background:#EEEEEE;
+  height: 60px;
+  top: auto;
+  bottom: 200px;
+  width: 60px;
+  z-index: 0;
+  -webkit-transition: all linear 1s;
+}
+
+.cat:before, .cat:after {
+    width: 0;
+    height: 0;
+    top: -10px;
+    position: absolute;
+    content: "";
+}
+
+.cat:before{
+    border-left: 0px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #EEE;
+    left: 0;
+}
+
+.cat:after{
+    border-right: 0px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid #EEE;
+    right: 0;
+}
+
+.cat .eyes{
+  position: absolute;
+  height: 8px; width: 8px;
+  background: #333;
+  border-radius: 100%;
+  top: 15px;
+}
+
+.cat .eyes.left{ left: 12px; }
+.cat .eyes.right{  right: 12px; }
+
+.cat .mouth{
+  position: absolute;
+  height: 4px; width: 60%;
+  background: #333;
+  border-radius: 0 0 30% 30%;
+  top: 28px;
+  margin: auto;
+  left: 0; right: 0;
+}
+
+.wrapper:hover .cat{
+  bottom: 240px;
+}
+
+@-webkit-keyframes clouds /*Safari and Chrome*/ {
+0 {margin-left:0;}
+25% {margin-left:100px;}
+50% {margin-left:0;}
+75% {margin-left:30px;}  
+100% {margin-left: 0;}
+}
+
+.signature {
+	position: absolute;
+	margin: auto;
+	bottom: 0;
+	top: auto;
+}
+
+.signature p{
+	text-align: center;
+	font-family: Helvetica, Arial, Sans-Serif;
+	font-size: 0.85em;
+	color: #DDDDDD;
+}
+
+.signature .much-heart{
+	display: inline-block;
+	position: relative;
+	margin: 0 4px;
+	height: 10px;
+	width: 10px;
+	background: #AC1D3F;
+	border-radius: 4px;
+	-ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.signature .much-heart::before, 
+.signature .much-heart::after {
+	  display: block;
+  content: '';
+  position: absolute;
+  margin: auto;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: #AC1D3F;
+  top: -4px;
+}
+
+.signature .much-heart::after {
+	bottom: 0;
+	top: auto;
+	left: -4px;
+}
+
+.signature a {
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold;
+}
